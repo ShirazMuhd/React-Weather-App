@@ -24,10 +24,12 @@ function Search() {
                     placeholder="Enter your city name"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)} />
-                <button type="submit" onClick={search}><i class="fas fa-search"></i></button>
+                <button type="submit" onClick={search}><i className="fas fa-search"></i></button>
             </div>
 
-            <WeatherCard/>
+            {Weather.main && (
+                <h1>Temperature</h1>
+            )}
         </React.Fragment>
     )
 

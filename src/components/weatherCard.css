@@ -1,0 +1,23 @@
+.weatherCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #00d2b5;
+    color: #ccc;
+    margin-top: 5rem;
+    font-family: sans-serif;
+    border-radius: 10px;
+    text-align: 
+    center;
+}
+.weatherCard .country h3 sup{
+    background-color: #ccc;
+    color: #1a1a1a;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 10px;
+}
+.weatherCard .temp h1{
+    margin: 0;
+}

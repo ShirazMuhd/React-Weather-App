@@ -4,7 +4,7 @@ body{
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    background-color: #1a1a1a;
+    background-color: #ccc;
 }
 .input-container{
     margin-top: 5rem;

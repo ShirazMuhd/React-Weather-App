@@ -4,6 +4,7 @@ body{
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    flex-wrap: wrap;
     background-color: #ccc;
 }
 .input-container{
@@ -12,6 +13,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 415px;
 }
 .input{
     padding: 1rem;
@@ -28,4 +30,10 @@ body{
     border-radius: 0 150px 150px 0;
     background-color: #00d2b5;
     cursor: pointer;
+    outline: none;
+}
+@media (max-width:413px){
+    .input{
+        width: unset;
+    }
 }

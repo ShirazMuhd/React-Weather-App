@@ -1,26 +1,34 @@
-.weatherCard{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #00d2b5;
-    color: #fff;
-    margin-top: 5rem;
-    font-family: sans-serif;
-    border-radius: 10px;
-    text-align: 
-    center;
+.weatherCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #00d2b5;
+  color: #fff;
+  margin-top: 5rem;
+  font-family: sans-serif;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 415px;
 }
-.weatherCard .country h3{
-    margin: 1rem;
+.weatherCard .country h3 {
+  margin: 1rem;
 }
-.weatherCard .country h3 sup{
-    background-color: #ccc;
-    color: #1a1a1a;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    border-radius: 10px;
+.weatherCard .country h3 sup {
+  background-color: #ccc;
+  color: #1a1a1a;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 10px;
 }
-.weatherCard .temp h1{
-    margin: 0;
+.weatherCard .temp h1 {
+  margin: 0;
+}
+.temp {
+  display: flex;
+  flex-direction: row;
+}
+.content {
+  display: flex;
+  align-items: center;
 }

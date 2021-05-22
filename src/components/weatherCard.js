@@ -12,14 +12,17 @@ function WeatherCard(props) {
           </h3>
         </div>
         <div className="temp">
+          <div className="content">
           <h1>
             {props.temp}&deg;
             <sup>C</sup>
           </h1>
+          </div>
+          <img src={props.img} alt="" />
         </div>
         <div className="description">
-            <img src="" alt="" />
-            <h4>{props.description}</h4>
+        
+          <h4>{props.description}</h4>
         </div>
       </div>
     </div>

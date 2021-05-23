@@ -32,6 +32,8 @@
             .then((reg) => console.log("Success: ", reg.scope))
             .catch((err) => console.log("Failure: ", err));
         });
+      }else{
+        console.log('No service worker found');
       }
     </script>
   </body>

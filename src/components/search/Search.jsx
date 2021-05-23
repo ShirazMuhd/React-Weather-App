@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './search.css';
-import fetchWeather from '../axios/fetchApi';
-import WeatherCard from './WeatherCard'
+import fetchWeather from '../../axios/fetchApi';
+import WeatherCard from '../weatherCard/WeatherCard'
 
 
 function Search() {
@@ -38,12 +38,15 @@ function Search() {
                 <button type="submit" onClick={search}><i className="fas fa-search"></i></button>
             </div>
 
-            {Weather.main && <WeatherCard
+            {
+            Weather.main && <WeatherCard
                 name={Weather.name}
                 country={Weather.sys.country}
                 temp={Math.round(Weather.main.temp)}
                 description={Weather.weather[0].description}
-                img={`https://openweathermap.org/img/wn/${Weather.weather[0].icon}@2x.png`} />}
+                img={`https://openweathermap.org/img/wn/${Weather.weather[0].icon}@2x.png`} />
+                
+            }
 
         </React.Fragment>
     )

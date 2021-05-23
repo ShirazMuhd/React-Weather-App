@@ -9,7 +9,8 @@
   font-family: sans-serif;
   border-radius: 10px;
   text-align: center;
-  max-width: 415px;
+  width: 100%;
+  
 }
 .weatherCard .country h3 {
   margin: 1rem;

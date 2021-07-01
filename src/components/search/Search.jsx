@@ -1,27 +1,49 @@
 import React, { useState } from 'react';
 import './search.css';
-import fetchWeather from '../../axios/fetchApi';
+import fetchData from '../../axios/fetchApi';
 import WeatherCard from '../weatherCard/WeatherCard'
+import Loading from '../loading/loading'
+import Text from '../no-weather/Text'
 
 
 function Search() {
     const [query, setQuery] = useState('')
     const [Weather, setWeather] = useState({})
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState(true)
 
-    const search = async (e) => {
-        const data = await fetchWeather(query)
-        setWeather(data)
-        console.log(Weather);
-        setQuery('')
+    const search = () => {
+        setLoading(true)
+        setError(false)
+        setWeather('')
+        fetchData(query).then((response) => {
+            setError(false)
+            setLoading(false)
+            setWeather(response)
+            setQuery('')
+        }).catch(() => {
+            setLoading(false)
+            setError(true)
+            setWeather('')
+            setQuery('')
+        })
     }
-    const enterSearch = async (e)=>{
-        if(e.key === 'Enter'){
-            if (e.key === 'Enter') {
-                const data = await fetchWeather(query)
-                setWeather(data)
-                console.log(Weather);
+    const enterSearch = (e) => {
+        if (e.key === 'Enter') {
+            setLoading(true)
+            setWeather('')
+            setError(false)
+            fetchData(query).then((response) => {
+                setError(false)
+                setLoading(false)
+                setWeather(response)
                 setQuery('')
-            }
+            }).catch(() => {
+                setLoading(false)
+                setError(true)
+                setWeather('')
+                setQuery('')
+            })
         }
     }
 
@@ -33,20 +55,23 @@ function Search() {
                     className="input"
                     placeholder="Enter your city name"
                     value={query}
-                    onChange={(e) => setQuery(e.target.value)} 
+                    onChange={(e) => setQuery(e.target.value)}
                     onKeyPress={enterSearch} />
                 <button type="submit" onClick={search}><i className="fas fa-search"></i></button>
             </div>
 
             {
-            Weather.main && <WeatherCard
-                name={Weather.name}
-                country={Weather.sys.country}
-                temp={Math.round(Weather.main.temp)}
-                description={Weather.weather[0].description}
-                img={`https://openweathermap.org/img/wn/${Weather.weather[0].icon}@2x.png`} />
-                
+                Weather.main && <WeatherCard
+                    name={Weather.name}
+                    country={Weather.sys.country}
+                    temp={Math.round(Weather.main.temp)}
+                    description={Weather.weather[0].description}
+                    img={`https://openweathermap.org/img/wn/${Weather.weather[0].icon}@2x.png`} />
+
             }
+
+            {error && <Text />}
+            {loading && <Loading />}
 
         </React.Fragment>
     )

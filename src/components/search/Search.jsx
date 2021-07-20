@@ -28,24 +28,6 @@ function Search() {
             setQuery('')
         })
     }
-    const enterSearch = (e) => {
-        if (e.key === 'Enter') {
-            setLoading(true)
-            setWeather('')
-            setError(false)
-            fetchData(query).then((response) => {
-                setError(false)
-                setLoading(false)
-                setWeather(response)
-                setQuery('')
-            }).catch(() => {
-                setLoading(false)
-                setError(true)
-                setWeather('')
-                setQuery('')
-            })
-        }
-    }
 
     return (
         <React.Fragment>

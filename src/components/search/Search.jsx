@@ -56,7 +56,7 @@ function Search() {
                     placeholder="Enter your city name"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
-                    onKeyPress={enterSearch} />
+                    onKeyPress={(e) => e.key === "Enter" && search()} />
                 <button type="submit" onClick={search}><i className="fas fa-search"></i></button>
             </div>
 

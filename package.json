@@ -2,7 +2,7 @@
   "name": "whether-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://shirazmuhd.github.io/weather-hosting/",
+  "homepage": "http://shirazmuhd.github.io/weather-hosting",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
